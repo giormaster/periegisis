@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
-
-public class questionpool : ScriptableObject
+[CreateAssetMenu(fileName = "QuestionPool", menuName = "QuestionPool")]
+public class QuestionPool : ScriptableObject
 {
-    public VideoPlayer[] questions;
+    public List<QuestionVideo> question = new List<QuestionVideo>();
 
 }
