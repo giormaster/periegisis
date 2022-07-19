@@ -16,7 +16,7 @@ public class myvideoplayer : MonoBehaviour
     void Start()
     {
         questionvideotoload = questionfrompoolload.question[0];
-        video.clip = questionvideotoload.CorrectVideo;
+        video.url = questionvideotoload.CorrectVideo.Englishpath;
         fullscreen = false;
         StartCoroutine(playvideo());
     }
@@ -64,7 +64,7 @@ public class myvideoplayer : MonoBehaviour
         int rnd;
         rnd = Random.Range(0, questionfrompoolload.question.Count);
         questionvideotoload = questionfrompoolload.question[rnd];
-        video.clip = questionvideotoload.CorrectVideo;
+        video.url = questionvideotoload.CorrectVideo.Englishpath;
         StartCoroutine(playvideo());
 
     }

@@ -5,7 +5,7 @@ using UnityEngine.Video;
 [CreateAssetMenu(fileName = "QuestionVideo", menuName = "Questionvideo")]
 public class QuestionVideo : ScriptableObject
 {
-    public VideoClip CorrectVideo;
-    public VideoClip[] PossibleVideo;
+    public Video CorrectVideo;
+    public Video[] PossibleVideo;
 
 }
