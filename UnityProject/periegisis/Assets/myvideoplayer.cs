@@ -20,6 +20,7 @@ public class myvideoplayer : MonoBehaviour
     [SerializeField] private VideoPlayer video2;
     
     private QuestionVideo questionvideotoload;
+    private GameObject test;
     [SerializeField] private QuestionPool questionfrompoolload;
     bool fullscreen;
     bool continiue;
@@ -31,14 +32,17 @@ public class myvideoplayer : MonoBehaviour
     {
         choosen.SetActive(false);
         choosen2.SetActive(false);
-        int i = Random.Range(0, 3);
-        questionvideotoload = questionfrompoolload.question[i];
-        int j = Random.Range(0, questionvideotoload.PossibleVideo.Length);
-        video.url = questionvideotoload.CorrectVideo.Englishpath;
-        video2.url = questionvideotoload.PossibleVideo[j].Englishpath;
+        //int i = Random.Range(0, 3);
+       // questionvideotoload = questionfrompoolload.question[i];
+        //int j = Random.Range(0, questionvideotoload.PossibleVideo.Length);
+        //video.url = questionvideotoload.CorrectVideo.Englishpath;
+        //video2.url = questionvideotoload.PossibleVideo[j].Englishpath;
         continiue = false;
         fullscreen = false;
+
         StartCoroutine(playvideo());
+
+
     }
     IEnumerator playvideo()
     {
@@ -255,6 +259,7 @@ public class myvideoplayer : MonoBehaviour
     {
         int rnd = Random.Range(0, questionfrompoolload.question.Count);
         questionvideotoload = questionfrompoolload.question[rnd];
+
         int j = Random.Range(0, questionvideotoload.PossibleVideo.Length);
         video.url = questionvideotoload.CorrectVideo.Englishpath;
         video2.url = questionvideotoload.PossibleVideo[j].Englishpath;
@@ -263,6 +268,11 @@ public class myvideoplayer : MonoBehaviour
         
     public void oncontinue()
     {
+        if (fullscreen == true)
+        {
+            rawimage.rectTransform.sizeDelta = new Vector2(900, 600);
+            fullscreen = false;
+        }
         choosen.SetActive(true);
         choosen2.SetActive(true);
         rawimage.transform.position = rawimage.transform.position + new Vector3(-500, 0, 0);
@@ -282,7 +292,9 @@ public class myvideoplayer : MonoBehaviour
             rawimage.texture = video2.texture;
             rawimage2.texture = video.texture;
         }
+        video.Play();
         video.time = 0;
+        video.Pause();
         video2.time = 0;
 
     }
@@ -321,6 +333,18 @@ public class myvideoplayer : MonoBehaviour
         }
 
     }
+    //LoadQuestionPools
+    public void loadpool()
+    {
+        questionfrompoolload = Resources.Load<QuestionPool>("QuestionPool");
+        int i = Random.Range(0, 3);
+        questionvideotoload = questionfrompoolload.question[i];
+        int j = Random.Range(0, questionvideotoload.PossibleVideo.Length);
+        video.url = questionvideotoload.CorrectVideo.Englishpath;
+        video2.url = questionvideotoload.PossibleVideo[j].Englishpath;
+        StartCoroutine(playvideo());
+    }
+
 
     
 }
