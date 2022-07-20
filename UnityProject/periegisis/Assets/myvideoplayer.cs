@@ -272,6 +272,8 @@ public class myvideoplayer : MonoBehaviour
             rawimage.texture = video2.texture;
             rawimage2.texture = video.texture;
         }
+        video.time = 1;
+        video2.time = 1;
 
     }
     public void onchoose()
