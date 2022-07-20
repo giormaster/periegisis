@@ -7,6 +7,8 @@ using UnityEngine.Video;
 public class myvideoplayer : MonoBehaviour
 {
     //GameObjects
+    [SerializeField] private GameObject losetext;
+    [SerializeField] private GameObject wintext;
     [SerializeField] private GameObject buttoncontroller;
     [SerializeField] private GameObject choosen;
     [SerializeField] private GameObject choosen2;
@@ -288,10 +290,16 @@ public class myvideoplayer : MonoBehaviour
     {
         if (correct1 == true)
         {
+            wintext.transform.position = wintext.transform.position + new Vector3(+1200, 0, 0);
+            rawimage.transform.position = rawimage.transform.position + new Vector3(0, -2000, 0);
+            rawimage2.transform.position = rawimage2.transform.position + new Vector3(0, -2000, 0);
             print("correct!");
         }
         else
         {
+            losetext.transform.position = losetext.transform.position + new Vector3(-1200, 0, 0);
+            rawimage.transform.position = rawimage.transform.position + new Vector3(0, -2000, 0);
+            rawimage2.transform.position = rawimage2.transform.position + new Vector3(0, -2000, 0);
             print("wrong");
         }
     }
@@ -299,10 +307,16 @@ public class myvideoplayer : MonoBehaviour
     {
         if (correct1 == false)
         {
+            wintext.transform.position = wintext.transform.position + new Vector3(+1200, 0, 0);
+            rawimage.transform.position = rawimage.transform.position + new Vector3(0, -2000, 0);
+            rawimage2.transform.position = rawimage2.transform.position + new Vector3(0, -2000, 0);
             print("correct");
         }
         else
         {
+            losetext.transform.position = losetext.transform.position + new Vector3(-1200, 0, 0);
+            rawimage.transform.position = rawimage.transform.position + new Vector3(0, -2000, 0);
+            rawimage2.transform.position = rawimage2.transform.position + new Vector3(0, -2000, 0);
             print("wrong");
         }
 
