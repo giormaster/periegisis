@@ -146,6 +146,7 @@ public class myvideoplayer : MonoBehaviour
             {
                 if (continiue == true)
                 {
+                    choosen.transform.position = choosen.transform.position + new Vector3(0, -2000, 0);
                     rawimage.transform.position = rawimage.transform.position + new Vector3(+500, 0, 0);
                     rawimage2.transform.position = rawimage2.transform.position + new Vector3(0, -2000, 0);
                 }
@@ -157,6 +158,7 @@ public class myvideoplayer : MonoBehaviour
             {
                 if (continiue == true)
                 {
+                    choosen.transform.position = choosen.transform.position + new Vector3(0, +2000, 0);
                     rawimage.transform.position = rawimage.transform.position + new Vector3(-500, 0, 0);
                     rawimage2.transform.position = rawimage2.transform.position + new Vector3(0, +2000, 0);
                 }
@@ -170,6 +172,7 @@ public class myvideoplayer : MonoBehaviour
             {
                 if (continiue == true)
                 {
+                    choosen2.transform.position = choosen2.transform.position + new Vector3(0, -2000, 0);
                     rawimage.transform.position = rawimage.transform.position + new Vector3(0, -2000, 0);
                     rawimage2.transform.position = rawimage2.transform.position + new Vector3(-500, 0, 0);
                 }
@@ -180,6 +183,7 @@ public class myvideoplayer : MonoBehaviour
             {
                 if (continiue == true)
                 {
+                    choosen2.transform.position = choosen2.transform.position + new Vector3(0, +2000, 0);
                     rawimage.transform.position = rawimage.transform.position + new Vector3(0, +2000, 0);
                     rawimage2.transform.position = rawimage2.transform.position + new Vector3(+500, 0, 0);
                 }
@@ -198,6 +202,7 @@ public class myvideoplayer : MonoBehaviour
             {
                 if (continiue == true)
                 {
+                    choosen2.transform.position = choosen2.transform.position + new Vector3(0, -2000, 0);
                     rawimage.transform.position = rawimage.transform.position + new Vector3(0, -2000, 0);
                     rawimage2.transform.position = rawimage2.transform.position + new Vector3(-500, 0, 0);
                 }
@@ -208,6 +213,7 @@ public class myvideoplayer : MonoBehaviour
             {
                 if (continiue == true)
                 {
+                    choosen2.transform.position = choosen2.transform.position + new Vector3(0, +2000, 0);
                     rawimage.transform.position = rawimage.transform.position + new Vector3(0, +2000, 0);
                     rawimage2.transform.position = rawimage2.transform.position + new Vector3(+500, 0, 0);
                 }
@@ -221,6 +227,7 @@ public class myvideoplayer : MonoBehaviour
             {
                 if (continiue == true)
                 {
+                    choosen.transform.position = choosen.transform.position + new Vector3(0, -2000, 0);
                     rawimage.transform.position = rawimage.transform.position + new Vector3(+500, 0, 0);
                     rawimage2.transform.position = rawimage2.transform.position + new Vector3(0, -2000, 0);
                 }
@@ -232,6 +239,7 @@ public class myvideoplayer : MonoBehaviour
             {
                 if (continiue == true)
                 {
+                    choosen.transform.position = choosen.transform.position + new Vector3(0, +2000, 0);
                     rawimage.transform.position = rawimage.transform.position + new Vector3(-500, 0, 0);
                     rawimage2.transform.position = rawimage2.transform.position + new Vector3(0, +2000, 0);
                 }
