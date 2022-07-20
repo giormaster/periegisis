@@ -52,10 +52,10 @@ public class myvideoplayer : MonoBehaviour
         rawimage2.texture = video2.texture;
         video.Play();
         video.Pause();
-        video.time = 1;
+        video.time = 0;
         video2.Play();
         video2.Pause();
-        video2.time = 1;
+        video2.time = 0;
 
     }
     //Start Buttons for Video 1 and 2
@@ -114,12 +114,12 @@ public class myvideoplayer : MonoBehaviour
         if (correct1 == true)
         {
             video.Pause();
-            video.time = 1;
+            video.time = 0;
         }
         else
         {
             video2.Pause();
-            video2.time = 1;
+            video2.time = 0;
         }
        
     }
@@ -128,12 +128,12 @@ public class myvideoplayer : MonoBehaviour
         if (correct1 == true)
         {
             video2.Pause();
-            video2.time = 1;
+            video2.time = 0;
         }
         else
         {
             video.Pause();
-            video.time = 1;
+            video.time = 0;
         }
        
     }
@@ -272,8 +272,8 @@ public class myvideoplayer : MonoBehaviour
             rawimage.texture = video2.texture;
             rawimage2.texture = video.texture;
         }
-        video.time = 1;
-        video2.time = 1;
+        video.time = 0;
+        video2.time = 0;
 
     }
     public void onchoose()
