@@ -68,6 +68,10 @@ public class myvideoplayer : MonoBehaviour
         StartCoroutine(playvideo());
 
     }
+    public void oncontinue()
+    {
+        
+    }
 
     
 }

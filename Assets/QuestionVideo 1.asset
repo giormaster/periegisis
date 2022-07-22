@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74ea9ddbb2a24604e93912bdd4b1653a, type: 3}
+  m_Name: QuestionVideo 1
+  m_EditorClassIdentifier: 
+  CorrectVideo: {fileID: 11400000, guid: 6806472a10af05848a2724a50ea5b9cc, type: 2}
+  PossibleVideo:
+  - {fileID: 11400000, guid: d24483247af2bbd40aa950a82172db61, type: 2}
+  - {fileID: 11400000, guid: a3ce57cfccabd4749a5a76215fff5c07, type: 2}
+  - {fileID: 11400000, guid: 0d9eb7acbb3fb0c46a79f442ba5772eb, type: 2}
