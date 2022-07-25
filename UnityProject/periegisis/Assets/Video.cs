@@ -7,5 +7,6 @@ public class Video : ScriptableObject
     enum id {Example1, Example2};
     public string Englishpath;
     public string Otherpath;
+    public string Caption;
     
 }

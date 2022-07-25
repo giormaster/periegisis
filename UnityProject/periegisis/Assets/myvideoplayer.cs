@@ -15,19 +15,24 @@ public class myvideoplayer : MonoBehaviour
     [SerializeField] private GameObject rooms;
     [SerializeField] private GameObject imagecontroller;
     [SerializeField] private GameObject centerplace;
+    [SerializeField] private GameObject placeholder1;
+    [SerializeField] private GameObject placeholder2;
     //rawimage
     [SerializeField] private RawImage rawimage;
     [SerializeField] private RawImage rawimage2;
     //video
     [SerializeField] private VideoPlayer video;
     [SerializeField] private VideoPlayer video2;
+    //Caption
+    [SerializeField] private Text captioncontroller;
+    [SerializeField] private Text captioncontroller2;
     
     private QuestionVideo questionvideotoload;
     private GameObject test;
     [SerializeField] private QuestionPool questionfrompoolload;
     bool fullscreen;
     bool continiue;
-    bool correct1 = true;
+    bool correct1;
  
     
     // Start is called before the first frame update
@@ -144,11 +149,12 @@ public class myvideoplayer : MonoBehaviour
             {
                 if (continiue == true)
                 {
-                    choosen.transform.position = choosen.transform.position + new Vector3(0, -2000, 0);
-                    rawimage.transform.position = rawimage.transform.position + new Vector3(+500, 0, 0);
-                    rawimage2.transform.position = rawimage2.transform.position + new Vector3(0, -2000, 0);
+                    choosen.SetActive(false);
+                    rawimage2.transform.position = rawimage2.transform.position + new Vector3(-2000, 0, 0);
+                    rawimage.transform.position = centerplace.transform.position;
                 }
-                rawimage.rectTransform.sizeDelta = new Vector2(1920, 1080);
+                captioncontroller.CrossFadeAlpha(0, 0, false);
+                rawimage.rectTransform.sizeDelta = new Vector2(Screen.width, Screen.height);
                 fullscreen = true;
 
             }
@@ -156,10 +162,11 @@ public class myvideoplayer : MonoBehaviour
             {
                 if (continiue == true)
                 {
-                    choosen.transform.position = choosen.transform.position + new Vector3(0, +2000, 0);
-                    rawimage.transform.position = rawimage.transform.position + new Vector3(-500, 0, 0);
-                    rawimage2.transform.position = rawimage2.transform.position + new Vector3(0, +2000, 0);
+                    choosen.SetActive(true);
+                    rawimage.transform.position = placeholder1.transform.position;
+                    rawimage2.transform.position = placeholder2.transform.position;
                 }
+                captioncontroller.CrossFadeAlpha(1, 0, false);
                 rawimage.rectTransform.sizeDelta = new Vector2(900, 600);
                 fullscreen = false;
             }
@@ -170,22 +177,25 @@ public class myvideoplayer : MonoBehaviour
             {
                 if (continiue == true)
                 {
-                    choosen2.transform.position = choosen2.transform.position + new Vector3(0, -2000, 0);
-                    rawimage.transform.position = rawimage.transform.position + new Vector3(0, -2000, 0);
-                    rawimage2.transform.position = rawimage2.transform.position + new Vector3(-500, 0, 0);
+                    choosen.SetActive(false);
+                    rawimage2.transform.position = rawimage.transform.position + new Vector3(-2000, 0, 0);
+                    rawimage.transform.position = centerplace.transform.position;
                 }
-                rawimage2.rectTransform.sizeDelta = new Vector2(1920, 1080);
+                captioncontroller.CrossFadeAlpha(0, 0, false);
+                rawimage.rectTransform.sizeDelta = new Vector2(1920, 1080);
                 fullscreen = true;
             }
             else
             {
                 if (continiue == true)
                 {
-                    choosen2.transform.position = choosen2.transform.position + new Vector3(0, +2000, 0);
-                    rawimage.transform.position = rawimage.transform.position + new Vector3(0, +2000, 0);
-                    rawimage2.transform.position = rawimage2.transform.position + new Vector3(+500, 0, 0);
+                    choosen.SetActive(true);
+                    rawimage.transform.position = placeholder1.transform.position;
+                    rawimage2.transform.position = placeholder2.transform.position;
                 }
+                captioncontroller.CrossFadeAlpha(1, 0, false);
                 rawimage2.rectTransform.sizeDelta = new Vector2(900, 600);
+                rawimage.rectTransform.sizeDelta = new Vector2(900, 600);
                 fullscreen = false;
             }
         }
@@ -200,10 +210,11 @@ public class myvideoplayer : MonoBehaviour
             {
                 if (continiue == true)
                 {
-                    choosen2.transform.position = choosen2.transform.position + new Vector3(0, -2000, 0);
-                    rawimage.transform.position = rawimage.transform.position + new Vector3(0, -2000, 0);
-                    rawimage2.transform.position = rawimage2.transform.position + new Vector3(-500, 0, 0);
+                    choosen2.SetActive(false);
+                    rawimage.transform.position = rawimage.transform.position + new Vector3(-2000, 0, 0);
+                    rawimage2.transform.position = centerplace.transform.position;
                 }
+                captioncontroller2.CrossFadeAlpha(0, 0, false);
                 rawimage2.rectTransform.sizeDelta = new Vector2(1920, 1080);
                 fullscreen = true;
             }
@@ -211,10 +222,11 @@ public class myvideoplayer : MonoBehaviour
             {
                 if (continiue == true)
                 {
-                    choosen2.transform.position = choosen2.transform.position + new Vector3(0, +2000, 0);
-                    rawimage.transform.position = rawimage.transform.position + new Vector3(0, +2000, 0);
-                    rawimage2.transform.position = rawimage2.transform.position + new Vector3(+500, 0, 0);
+                    choosen2.SetActive(true);
+                    rawimage.transform.position = placeholder1.transform.position;
+                    rawimage2.transform.position = placeholder2.transform.position;
                 }
+                captioncontroller2.CrossFadeAlpha(1, 0, false);
                 rawimage2.rectTransform.sizeDelta = new Vector2(900, 600);
                 fullscreen = false;
             }
@@ -225,11 +237,12 @@ public class myvideoplayer : MonoBehaviour
             {
                 if (continiue == true)
                 {
-                    choosen.transform.position = choosen.transform.position + new Vector3(0, -2000, 0);
-                    rawimage.transform.position = rawimage.transform.position + new Vector3(+500, 0, 0);
-                    rawimage2.transform.position = rawimage2.transform.position + new Vector3(0, -2000, 0);
+                    choosen2.SetActive(false);
+                    rawimage2.transform.position = centerplace.transform.position;
+                    rawimage.transform.position = rawimage2.transform.position + new Vector3(-2000, 0, 0);
                 }
-                rawimage.rectTransform.sizeDelta = new Vector2(1920, 1080);
+                captioncontroller2.CrossFadeAlpha(0, 0, false);
+                rawimage2.rectTransform.sizeDelta = new Vector2(1920, 1080);
                 fullscreen = true;
 
             }
@@ -237,11 +250,13 @@ public class myvideoplayer : MonoBehaviour
             {
                 if (continiue == true)
                 {
-                    choosen.transform.position = choosen.transform.position + new Vector3(0, +2000, 0);
-                    rawimage.transform.position = rawimage.transform.position + new Vector3(-500, 0, 0);
-                    rawimage2.transform.position = rawimage2.transform.position + new Vector3(0, +2000, 0);
+                    choosen2.SetActive(true);
+                    rawimage.transform.position = placeholder1.transform.position;
+                    rawimage2.transform.position = placeholder2.transform.position;
                 }
+                captioncontroller2.CrossFadeAlpha(1, 0, false);
                 rawimage.rectTransform.sizeDelta = new Vector2(900, 600);
+                rawimage2.rectTransform.sizeDelta = new Vector2(900, 600);
                 fullscreen = false;
             }
         }
@@ -260,15 +275,22 @@ public class myvideoplayer : MonoBehaviour
         
     public void oncontinue()
     {
+        string temp;
         if (fullscreen == true)
         {
             rawimage.rectTransform.sizeDelta = new Vector2(900, 600);
             fullscreen = false;
         }
+        // Set thumbnail to 0
+        video.Pause();
+        video.time = 0;
+        video2.Pause();
+        video2.time = 0;
+        //
         choosen.SetActive(true);
         choosen2.SetActive(true);
-        rawimage.transform.position = rawimage.transform.position + new Vector3(-500, 0, 0);
-        rawimage2.transform.position = rawimage2.transform.position + new Vector3(-1000, 0, 0);
+        rawimage.transform.position = placeholder1.transform.position;
+        rawimage2.transform.position = placeholder2.transform.position;
         continiue = true;
         buttoncontroller.SetActive(false);
         int i = Random.Range(0, 2);
@@ -283,11 +305,10 @@ public class myvideoplayer : MonoBehaviour
             correct1 = false;
             rawimage.texture = video2.texture;
             rawimage2.texture = video.texture;
+            temp = captioncontroller.text;
+            captioncontroller.text = captioncontroller2.text;
+            captioncontroller2.text = temp;
         }
-        video.Play();
-        video.time = 0;
-        video.Pause();
-        video2.time = 0;
 
     }
     public void onchoose()
@@ -326,76 +347,37 @@ public class myvideoplayer : MonoBehaviour
 
     }
     //LoadQuestionPools
-    public void loadpoolroom1()
-    {
-        rooms.SetActive(false);
-        buttoncontroller.SetActive(true);
-        imagecontroller.SetActive(true);
-        questionfrompoolload = Resources.Load<QuestionPool>("QuestionPool");
-        int i = Random.Range(0, 3);
-        questionvideotoload = questionfrompoolload.question[i];
-        int j = Random.Range(0, questionvideotoload.PossibleVideo.Length);
-        video.url = questionvideotoload.CorrectVideo.Englishpath;
-        video2.url = questionvideotoload.PossibleVideo[j].Englishpath;
-        StartCoroutine(playvideo());
-    }
     
-    public void loadpoolroom2()
-    {
-        rooms.SetActive(false);
-        buttoncontroller.SetActive(true);
-        imagecontroller.SetActive(true);
-        questionfrompoolload = Resources.Load<QuestionPool>("QuestionPool 1");
-        int i = Random.Range(0, 3);
-        questionvideotoload = questionfrompoolload.question[i];
-        int j = Random.Range(0, questionvideotoload.PossibleVideo.Length);
-        video.url = questionvideotoload.CorrectVideo.Englishpath;
-        video2.url = questionvideotoload.PossibleVideo[j].Englishpath;
-        StartCoroutine(playvideo());
-
-    }
-    public void loadpoolroom3()
-    {
-        rooms.SetActive(false);
-        buttoncontroller.SetActive(true);
-        imagecontroller.SetActive(true);
-        questionfrompoolload = Resources.Load<QuestionPool>("QuestionPool 2");
-        int i = Random.Range(0, 3);
-        questionvideotoload = questionfrompoolload.question[i];
-        int j = Random.Range(0, questionvideotoload.PossibleVideo.Length);
-        video.url = questionvideotoload.CorrectVideo.Englishpath;
-        video2.url = questionvideotoload.PossibleVideo[j].Englishpath;
-        StartCoroutine(playvideo());
-
-    }
-    public void loadpoolroom4()
-    {
-        rooms.SetActive(false);
-        buttoncontroller.SetActive(true);
-        imagecontroller.SetActive(true);
-        questionfrompoolload = Resources.Load<QuestionPool>("QuestionPool 3");
-        int i = Random.Range(0, 3);
-        questionvideotoload = questionfrompoolload.question[i];
-        int j = Random.Range(0, questionvideotoload.PossibleVideo.Length);
-        video.url = questionvideotoload.CorrectVideo.Englishpath;
-        video2.url = questionvideotoload.PossibleVideo[j].Englishpath;
-        StartCoroutine(playvideo());
-
-    }
     public void initialization()
     {
+        correct1 = true;
         choosen.SetActive(false);
         choosen2.SetActive(false);
         continiue = false;
         fullscreen = false;
         buttoncontroller.SetActive(false);
         imagecontroller.SetActive(false);
-        rooms.transform.position = centerplace.transform.position; 
 
         //StartCoroutine(playvideo());
 
     }
 
+    public void loadpoolroom(string path)
+    {
+        rooms.SetActive(false);
+        buttoncontroller.SetActive(true);
+        imagecontroller.SetActive(true);
+        questionfrompoolload = Resources.Load<QuestionPool>(path);
+        int i = Random.Range(0, 3);
+        questionvideotoload = questionfrompoolload.question[i];
+        int j = Random.Range(0, questionvideotoload.PossibleVideo.Length);
+        video.url = questionvideotoload.CorrectVideo.Englishpath;
+        video2.url = questionvideotoload.PossibleVideo[j].Englishpath;
+        captioncontroller.text = questionvideotoload.CorrectVideo.Caption;
+        captioncontroller2.text = questionvideotoload.PossibleVideo[j].Caption;
 
+        StartCoroutine(playvideo());
+
+    }
 
 }
