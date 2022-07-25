@@ -315,14 +315,14 @@ public class myvideoplayer : MonoBehaviour
     {
         if (correct1 == true)
         {
-            wintext.transform.position = wintext.transform.position + new Vector3(+1200, 0, 0);
+            wintext.transform.position = centerplace.transform.position;
             rawimage.transform.position = rawimage.transform.position + new Vector3(0, -2000, 0);
             rawimage2.transform.position = rawimage2.transform.position + new Vector3(0, -2000, 0);
             print("correct!");
         }
         else
         {
-            losetext.transform.position = losetext.transform.position + new Vector3(-1200, 0, 0);
+            losetext.transform.position = centerplace.transform.position;
             rawimage.transform.position = rawimage.transform.position + new Vector3(0, -2000, 0);
             rawimage2.transform.position = rawimage2.transform.position + new Vector3(0, -2000, 0);
             print("wrong");
@@ -332,14 +332,14 @@ public class myvideoplayer : MonoBehaviour
     {
         if (correct1 == false)
         {
-            wintext.transform.position = wintext.transform.position + new Vector3(+1200, 0, 0);
+            wintext.transform.position = centerplace.transform.position;
             rawimage.transform.position = rawimage.transform.position + new Vector3(0, -2000, 0);
             rawimage2.transform.position = rawimage2.transform.position + new Vector3(0, -2000, 0);
             print("correct");
         }
         else
         {
-            losetext.transform.position = losetext.transform.position + new Vector3(-1200, 0, 0);
+            losetext.transform.position = centerplace.transform.position;
             rawimage.transform.position = rawimage.transform.position + new Vector3(0, -2000, 0);
             rawimage2.transform.position = rawimage2.transform.position + new Vector3(0, -2000, 0);
             print("wrong");
@@ -375,7 +375,6 @@ public class myvideoplayer : MonoBehaviour
         video2.url = questionvideotoload.PossibleVideo[j].Englishpath;
         captioncontroller.text = questionvideotoload.CorrectVideo.Caption;
         captioncontroller2.text = questionvideotoload.PossibleVideo[j].Caption;
-
         StartCoroutine(playvideo());
 
     }
