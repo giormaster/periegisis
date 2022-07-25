@@ -378,5 +378,15 @@ public class myvideoplayer : MonoBehaviour
         StartCoroutine(playvideo());
 
     }
+    public void onreset()
+    {
+        rooms.SetActive(true);
+        rawimage.transform.position = centerplace.transform.position;
+        wintext.transform.position = wintext.transform.position + new Vector3(-2000, 0, 0);
+        losetext.transform.position = losetext.transform.position + new Vector3(+2000, 0, 0);
+        initialization();
+
+
+    }
 
 }
