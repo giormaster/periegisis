@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Video;
+using UnityEngine.SceneManagement;
 
 public class myvideoplayer : MonoBehaviour
 {
@@ -371,8 +372,10 @@ public class myvideoplayer : MonoBehaviour
         int i = Random.Range(0, 3);
         questionvideotoload = questionfrompoolload.question[i];
         int j = Random.Range(0, questionvideotoload.PossibleVideo.Length);
-        video.url = questionvideotoload.CorrectVideo.Englishpath;
-        video2.url = questionvideotoload.PossibleVideo[j].Englishpath;
+        video.clip = Resources.Load<VideoClip>(questionvideotoload.CorrectVideo.Englishpath);
+        video2.clip = Resources.Load<VideoClip>(questionvideotoload.PossibleVideo[j].Englishpath);
+        //video.url = questionvideotoload.CorrectVideo.Englishpath;
+        //video2.url = questionvideotoload.PossibleVideo[j].Englishpath;
         captioncontroller.text = questionvideotoload.CorrectVideo.Caption;
         captioncontroller2.text = questionvideotoload.PossibleVideo[j].Caption;
         StartCoroutine(playvideo());
@@ -387,6 +390,11 @@ public class myvideoplayer : MonoBehaviour
         initialization();
 
 
+    }
+
+    public void onbacktomenu()
+    {
+        SceneManager.LoadScene("New Scene");
     }
 
 }
