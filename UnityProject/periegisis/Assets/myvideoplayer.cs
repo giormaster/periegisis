@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 public class myvideoplayer : MonoBehaviour
 {
     //GameObjects
+    [SerializeField] private GameObject passdevice;
     [SerializeField] private GameObject losetext;
     [SerializeField] private GameObject wintext;
     [SerializeField] private GameObject buttoncontroller;
@@ -310,6 +311,7 @@ public class myvideoplayer : MonoBehaviour
             captioncontroller.text = captioncontroller2.text;
             captioncontroller2.text = temp;
         }
+        passdevice.SetActive(true);
 
     }
     public void onchoose()
@@ -395,6 +397,11 @@ public class myvideoplayer : MonoBehaviour
     public void onbacktomenu()
     {
         SceneManager.LoadScene("New Scene");
+    }
+
+    public void onpassdevice()
+    {
+        passdevice.SetActive(false);
     }
 
 }
